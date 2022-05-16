@@ -1,0 +1,33 @@
+void mouseReleased() {
+  if (mode == INTRO) {
+    introClicks();
+  } else if (mode == GAME) {
+    gameClicks();
+  } else if (mode == PAUSE) {
+    pauseClicks();
+  } else if (mode == GAMEOVER) {  
+    gameoverClicks();    
+  } else if (mode == OPTIONS) {  
+    optionsClicks();    
+  } else {
+    println("Error: Mode = " + mode);
+  }
+  
+  
+   controlSlider();
+  
+  
+  
+  if(dist(100, 200, mouseX, mouseY) <100){
+    stroke(255);
+  }
+}
+
+void mouseDragged () {
+  controlSlider();
+  
+
+}
+
+
+ 
