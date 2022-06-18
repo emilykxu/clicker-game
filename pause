@@ -1,7 +1,12 @@
 void pause () {
   
   
-  
+textSize(150);
+fill(255);
+
+text("PAUSED", 350, 300);
+
+textSize(40);
 }
 
 
