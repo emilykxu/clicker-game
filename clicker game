@@ -1,4 +1,3 @@
-# clicker-game
 //emily xu
 //2-3
 
@@ -18,17 +17,20 @@ final int GAME = 1;
 final int PAUSE = 2;
 final int GAMEOVER = 3;
 final int OPTIONS =4;
+
 //target variables
 float x, y, d;
 float vx, vy; //target  velocity
 float score, lives, highscore;
-PImage cow, chicken, pig;
+PImage cow;
+PImage chicken;
+PImage pig;
+PImage farm;
+
 
 float sliderX;
 float thickness;
 PImage selectedImage;
-
-
 //
 
 //sound variables
@@ -44,20 +46,31 @@ void setup() {
   //target initialization
   x = width/2;
   y = height/2;
-  d = 200;
+  d = 100;
   vx = random(-5, 5);
   vy = random(-5, 5);
-  sliderX = 500;
+
   score = 0;
   lives = 3;
+sliderX = 500;
+ selectedImage = cow;
+ highscore = 0;
+thickness = 200;
   d = thickness + 10;
-selectedImage = cow;
   //minim
   minim = new Minim(this);
   theme = minim.loadFile("mario bros theme.mp3");
   coin = minim.loadFile("coin.wav");
   bump = minim.loadFile("bump.wav");
   gameover = minim.loadFile("gameover.wav");
+  
+  //pics
+  
+   cow = loadImage("cow.png");
+   chicken = loadImage("chicken.png");
+     pig = loadImage("pig.png");
+      farm = loadImage("farm.jpeg");
+selectedImage = cow;
 }
 
 void draw() {
@@ -76,4 +89,3 @@ void draw() {
   }
  
 }
-
