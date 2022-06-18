@@ -14,19 +14,14 @@ void mouseReleased() {
   }
   
   
-   controlSlider();
   
   
-  
-  if(dist(100, 200, mouseX, mouseY) <100){
-    stroke(255);
-  }
 }
 
 void mouseDragged () {
   controlSlider();
-  
 
+ 
 }
 
 
