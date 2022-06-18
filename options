@@ -1,7 +1,9 @@
 void options() {
   background(240, 203, 232);
   fill(255);
-
+ imageMode(CORNER);
+  image(farm, 0, 0, 1000, 1000);
+  imageMode(CORNER);
 strokeWeight(5);
 
 //cow
@@ -17,9 +19,10 @@ strokeWeight(5);
     stroke(0);
   }
  
+  
  
   rect(100, 200, 200, 200);
-  cow= loadImage("cow.png");
+ 
    image(cow, 100, 200, 200, 200);
    
    fill(255);
@@ -40,8 +43,13 @@ strokeWeight(5);
     stroke(0);
   }
   
+  if (mouseX > 300 && mouseX < 500 && mouseY > 200 && mouseY < 400) {
+    selectedImage = chicken;
+  
+  }
+  
 rect(300, 200, 200, 200);
-chicken= loadImage("chicken.png");
+
 image(chicken, 300, 200, 200, 200);
 
 fill(255);
@@ -60,30 +68,47 @@ stroke(0);
     stroke(0);
   } 
    rect(500, 200, 200, 200);
-   pig= loadImage("pig.png");
+ 
     image(pig, 500, 200, 200, 200);
     
    fill(255);
    stroke(0);
    
-   
-   
-   
-   
-   
+    if (mouseX > 500 && mouseX < 700 && mouseY > 200 && mouseY < 400) {
+    selectedImage = pig;
+
+  }
+  
 // indicat=ors
 
-rect(100, 550, 200, 200);
+ //tactile okay and back
+   if (mouseX > 530 && mouseX < 780 && mouseY > 600 && mouseY < 700) {
+    fill(255, 255, 0);
+  } else {
+    fill(255);
+  }
+  
 
 
+  
+rect(530, 600, 150, 100);
 
-rect(500, 600, 200, 100);
-image(cow, 130, 580, thickness, thickness);
-  textSize(60);
+   //ok sign
+   
+   if (mouseX > 530 && mouseX < 680 && mouseY >500  && mouseY < 600) {
+  fill(255, 255, 0);
+  } else {
+    fill(255);
+  }
+   rect(530, 500, 150, 100);
+   
+   
+image(selectedImage, 5, 480, thickness, thickness);
+  textSize(50);
   textAlign(CENTER, CENTER);
   fill(0);
   text("BACK", 600, 640);
-  
+  text("OKAY", 600, 540);
   //slider
    
    fill(0);
@@ -94,19 +119,33 @@ image(cow, 130, 580, thickness, thickness);
   d = thickness + 10;
    
    
-}
+  
 
+}
 
 void optionsClicks() {
 
  
-if (mouseX > 500 && mouseX < 700 && mouseY >600  && mouseY < 700) {
+if (mouseX > 530 && mouseX < 780 && mouseY >600  && mouseY < 700) {
   mode = INTRO;
   }
 
-if (mouseX > 100 && mouseX < 300 && mouseY > 200  && mouseY < 400) {
-  selectedImage = cow;
-}
+if (mouseX > 530 && mouseX < 680 && mouseY >500  && mouseY < 600) {
+  mode = GAME;
+  }
+
+if (mouseX > 100 && mouseX < 300 && mouseY > 200 && mouseY < 400) { // rect(100, 200, 200, 200);
+    selectedImage = cow;
+  } 
+  //angryfrog
+  if (mouseX > 500 && mouseX < 700 && mouseY > 200 && mouseY < 400) { //rect(500, 200, 200, 200);
+    selectedImage = pig;
+  }
+
+  //mouthfrog
+  if (mouseX > 300 && mouseX < 500 && mouseY > 200 && mouseY < 400) { //rect(300, 200, 200, 200);
+    selectedImage = chicken;
+  }
 
  
 }
@@ -124,4 +163,5 @@ if (mouseX > 300 && mouseX < 500 && mouseY > 485 && mouseY < 515) {
   }
  
 }
+  
   
