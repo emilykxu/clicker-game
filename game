@@ -1,6 +1,8 @@
 void game() {
   background(240, 203, 232);
-
+ imageMode(CORNER);
+  image(farm, 0, 0, 1000, 1000);
+  imageMode(CORNER);
   text("Score: " + score, width/2, 50);
   text("Lives: " + lives, width/2, 100);
 
@@ -9,18 +11,25 @@ void game() {
   //pause button
   stroke(20);
   fill(255);
-  circle(100, 10, 10);
-
-
+  if (dist(mouseX, mouseY, 100, 100) < 50) {
+    
+  fill(255, 255, 0);
+  } else {
+    fill(255);
+  }
+  circle(100, 100, 100);
+  fill(0);
+  textSize(30);
+ text("pause", 100, 90);
+ 
   //display target
   fill(255);
   stroke(0);
   strokeWeight(5);
-ellipse(x, y, d, d);
 
-  image(selectedImage, x, y , thickness, thickness);
+  imageMode(CENTER);
+  image(selectedImage, x, y, thickness, thickness);
 
-  
   //moving
   x = x + vx;
   y = y + vy;
@@ -38,7 +47,7 @@ ellipse(x, y, d, d);
 void gameClicks() {
   //mode = GAMEOVER;
 
-  if (dist(mouseX, mouseY, x, y) < d/2) {
+  if (dist(mouseX, mouseY, x, y) < 50) {
     score = score + 1;
     //highscore = 
     vx = vx * 1.1;
@@ -58,4 +67,5 @@ void gameClicks() {
     
   
 }
+ 
  
